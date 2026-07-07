@@ -1,3 +1,17 @@
+skin_types = {
+    "1" : "Oily",
+    "2" : "Dry",
+    "3" : "Combination",
+    "4" : "Normal"
+}
+
+concerns= {
+    "1" : "Acne",
+    "2" : "Dark Spots",
+    "3" : "Dullness",
+    "4" : "Redness",
+    "5" : "None"
+}
 routines = {
     "Oily" : {
         "Cleanser" : "Foaming Cleanser",

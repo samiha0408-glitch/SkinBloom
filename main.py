@@ -1,23 +1,12 @@
-from routines import routines,concern_treatments
+from routines import skin_types, concerns, routines,concern_treatments
 from ingredients import ingredients
-skin_types = {
-    "1" : "Oily",
-    "2" : "Dry",
-    "3" : "Combination",
-    "4" : "Normal"
-}
+from tips import tips
+from basics import basics, menu
 
-concerns= {
-    "1" : "Acne",
-    "2" : "Dark Spots",
-    "3" : "Dullness",
-    "4" : "Redness",
-    "5" : "None"
-}
 print(""" 
 =================================================================================
                                 🌸 SkinBloom 🌸
-                          Understand your skin naturally
+                        Understand your skin naturally
 =================================================================================
 """)
 print("Welcome to SkinBloom!")
@@ -30,14 +19,14 @@ print("""
 3. 💡 Today's Glow Tip
 4. 📖 Skin Care Basics
 5. 🚪 Exit
-      """ )
+    """ )
 choice = int(input("Enter your chocie: "))
 if choice == 1 :
     print("""
 --------------------o------------------------
-          🌿 Discover My Routine
+        🌿 Discover My Routine
 --------------------o-----------------------
- """)
+""")
     print("Let's get to know your skin")
     name = input("Name: ").title()
     print("""
@@ -46,7 +35,7 @@ if choice == 1 :
         2. Dry
         3. Combination
         4. Normal
-           """)
+        """)
     skin_type = input("> ").title()
     print("""
         \nPrimary Concern:
@@ -72,7 +61,7 @@ if choice == 1 :
     }
     print("""
         -----------------------------
-          🌸 YOUR SKIN PROFILE 🌸 
+        🌸 YOUR SKIN PROFILE 🌸 
         -----------------------------
         """)
     print(f"Name            : {profile['name']}")
@@ -100,7 +89,7 @@ if choice == 1 :
 elif choice == 2:
     print(""" 
     ------------------------------
-          INGREDIENT EXPLORER
+        INGREDIENT EXPLORER
     ------------------------------
 """)
     choice1=input("Enter ingredients: ").lower()
@@ -109,6 +98,58 @@ elif choice == 2:
     print(f"\nBest for: {info['best_for']}")
     print(f"Benefits:{info['benefits']}")
     print(f"Avoid if: {info['avoid']}")
+elif choice == 3:
+    print(""" 
+    -----------------------------
+        TODAY'S GLOW TIPS
+    -----------------------------
+""")
+    print("""
+    -What do you want tips for?
+    - Morning
+    - Night
+    - General
+""")
+    choice2= input("Enter your choice: ").lower()
+    selected_tips = tips[choice2]
+    for tip in selected_tips:
+        print(f"- {tip} ")
+elif choice == 4:
+    while True:
+        print("""
+        ------------><------------
+            SKINCARE BASICS
+        ------------><------------
+        
+    """)
+        
+        print("""
+            What do you want to know about?
+            1. What is Cleanser?
+            2. What is Moisturizer?
+            3. What is Sunscreen?
+            4. What is serum?
+            5. Back
+
+        """)
+        choice3 = input("Enter your choice: ")
+        if choice3 == "5":
+            break
+        topic = menu[choice3]
+        info = basics[topic]
+        print(info)
+elif choice == 5:
+    print("""
+🌸 Thanks for visiting SkinBloom!
+
+Stay hydrated 💧
+Wear sunscreen ☀️
+Take care of yourself 💙
+
+See you again!
+""")
+  
+        
 
 
 
